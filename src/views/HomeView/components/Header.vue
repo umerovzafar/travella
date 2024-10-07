@@ -5,13 +5,11 @@
         <AdaptiveMainNavBar :toggleShowAdaptiveNav="toggleShowAdaptiveNav" :showAdaptiveNav="showAdaptiveNav" />
         <div class="header__content container">
             <h1 class="header__content-title">
-                <span>Лучшие Туры для Вас:</span>
-                Путешествуйте с Комфортом и Безопасностью
+                <span>{{ $t("heroSection.span") }}:</span>
+                {{ $t('heroSection.title') }}
             </h1>
             <h2 class="header__content-subtitle">
-                Индивидуальные маршруты,
-                эксклюзивные предложения и полная поддержка на
-                каждом шагу вашего путешествия
+                {{ $t('heroSection.subtitle') }}
             </h2>
         </div>
         <LanguagePicker :setLang="setLang" :toggleLanguageDialog="toggleLanguageDialog" :showModal="showLanguageDialog" />

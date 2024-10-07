@@ -3,15 +3,15 @@
         <MainNavBar class="container" :page="true" :lang="lang" :toggleLanguageDialog="toggleLanguageDialog"
             :toggleShowAdaptiveNav="toggleShowAdaptiveNav" :showAdaptiveNav="showAdaptiveNav" />
         <AdaptiveMainNavBar :toggleShowAdaptiveNav="toggleShowAdaptiveNav" :showAdaptiveNav="showAdaptiveNav" />
-        <LanguagePicker :setLang="setLang" :toggleLanguageDialog="toggleLanguageDialog" :showModal="showLanguageDialog" />
+        <LanguagePicker :setLang="setLang" :toggleLanguageDialog="toggleLanguageDialog"
+            :showModal="showLanguageDialog" />
     </header>
 
     <main class="main">
         <section class="main__company">
             <div class="main__company-content container">
-                <SectionHeader title="Travella" titleSpan="Agency" top="Немного о нас"
-                    descr="Мы являемся ведущей компанией в сфере организации туров и путешествий, предлагая нашим клиентам незабываемые впечатления и комфортные условия для отдыха."
-                    data-aos="fade-right" />
+                <SectionHeader title="Travella" titleSpan="Agency" :top="$t('aboutPage.top')"
+                    :descr="$t('aboutPage.descr')" data-aos="fade-right" />
                 <div class="main__company-bloc">
                     <svg class="main__company-bloc-decor" width="280" height="401" viewBox="0 0 280 401" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,8 @@
                                 filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                                 <feFlood flood-opacity="0" result="BackgroundImageFix" />
                                 <feGaussianBlur in="BackgroundImageFix" stdDeviation="15" />
-                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_556_68389" />
+                                <feComposite in2="SourceAlpha" operator="in"
+                                    result="effect1_backgroundBlur_556_68389" />
                                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_556_68389"
                                     result="shape" />
                             </filter>
@@ -33,16 +34,15 @@
                     </svg>
 
                     <h1 class="main__company-bloc-title">
-                        ваши мечты-наши маршруты
+                        {{ $t('aboutPage.slogan') }}
                     </h1>
                 </div>
             </div>
         </section>
 
         <section class="main__facts">
-            <SectionHeader title="Немного" titleSpan="фактов" top="Немного о нас"
-                descr="Мы стремимся подарить вам идеальные путешествия, которые оставят самые яркие и приятные воспоминания. "
-                data-aos="fade-right" />
+            <SectionHeader title="Немного" titleSpan="фактов" :top="$t('aboutPage.top')"
+                :descr="$t('aboutPage.factsDescr')" data-aos="fade-right" />
 
             <div class="main__facts-cards container">
                 <div class="main__facts-cards-item" v-for="(item, index) in items" :key="index">
@@ -62,7 +62,8 @@
                     :class="{ 'with-tags': item?.get('tags') }" :data-aos="item.get('data-aos')">
                     <div class="about__mission-content-item-top">
                         <div class="about__mission-content-item-top-img" v-show="!item.get('tags')">
-                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M8.16147 3.08076C8.68934 2.81683 9.31066 2.81683 9.83853 3.08076L14.8323 5.57765C14.9379 5.63043 15.0621 5.63043 15.1677 5.57765L19.0365 3.64326C20.2832 3.01992 21.75 3.92647 21.75 5.32031V17.8047C21.75 18.5149 21.3487 19.1642 20.7135 19.4818L15.8385 21.9193C15.3107 22.1832 14.6893 22.1832 14.1615 21.9193L9.16771 19.4224C9.06213 19.3696 8.93787 19.3696 8.8323 19.4224L4.96353 21.3568C3.71683 21.9801 2.25 21.0736 2.25 19.6797V7.19531C2.25 6.48512 2.65125 5.83587 3.28647 5.51826L8.16147 3.08076ZM9 6.50002C9.41421 6.50002 9.75 6.8358 9.75 7.25002V15.5C9.75 15.9142 9.41421 16.25 9 16.25C8.58579 16.25 8.25 15.9142 8.25 15.5V7.25002C8.25 6.8358 8.58579 6.50002 9 6.50002ZM15.75 9.50002C15.75 9.0858 15.4142 8.75002 15 8.75002C14.5858 8.75002 14.25 9.0858 14.25 9.50002V17.75C14.25 18.1642 14.5858 18.5 15 18.5C15.4142 18.5 15.75 18.1642 15.75 17.75V9.50002Z"
                                     fill="#FF5722" />
@@ -76,8 +77,8 @@
                                     stroke="white" stroke-opacity="0.2" stroke-width="56.6307" stroke-linecap="round" />
                             </g>
                             <defs>
-                                <filter id="filter0_b_556_68569" x="-29.3201" y="-65.3154" width="436.639" height="580.631"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <filter id="filter0_b_556_68569" x="-29.3201" y="-65.3154" width="436.639"
+                                    height="580.631" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
                                     <feGaussianBlur in="BackgroundImageFix" stdDeviation="15" />
                                     <feComposite in2="SourceAlpha" operator="in"
@@ -104,14 +105,14 @@
         <section class="about__locations">
             <div class="about__locations-content container">
                 <div class="about__locations-content-descr">
-                    <p>С момента открытия агентство начало активно привлекать клиентов, предлагая им персонализированные
-                        туры, высокий уровень сервиса и индивидуальный подход.
-                    </p>
-                    <p>Благодаря качественной работе и постоянному совершенствованию услуг, агентство быстро завоевало
-                        доверие и признание на рынке.
+                    <p>
+                        {{ $t('aboutPage.locationsText1') }}
                     </p>
                     <p>
-                        За 10 лет работы, сы обзавелись партнёрами в разных странах
+                        {{ $t('aboutPage.locationsText2') }}
+                    </p>
+                    <p>
+                        {{ $t('aboutPage.locationsText3') }}
                     </p>
                 </div>
                 <img src="../../assets/images/worldMap.png" alt="worldMap" class="about__locations-img" loading="lazy">
@@ -173,7 +174,8 @@
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                         <feGaussianBlur in="BackgroundImageFix" stdDeviation="15" />
                         <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_556_68390" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_556_68390" result="shape" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_556_68390"
+                            result="shape" />
                     </filter>
                 </defs>
             </svg>

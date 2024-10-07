@@ -3,15 +3,17 @@
         <MainNavBar class="container" :page="true" :lang="lang" :toggleLanguageDialog="toggleLanguageDialog"
             :toggleShowAdaptiveNav="toggleShowAdaptiveNav" :showAdaptiveNav="showAdaptiveNav" />
         <AdaptiveMainNavBar :toggleShowAdaptiveNav="toggleShowAdaptiveNav" :showAdaptiveNav="showAdaptiveNav" />
-        <LanguagePicker :setLang="setLang" :toggleLanguageDialog="toggleLanguageDialog" :showModal="showLanguageDialog" />
+        <LanguagePicker :setLang="setLang" :toggleLanguageDialog="toggleLanguageDialog"
+            :showModal="showLanguageDialog" />
     </header>
     <main class="main">
         <section class="main__contacts">
-            <SectionHeader title="Контакты" titleSpan="" top="Контакты" descr="" data-aos="fade-left" />
+            <SectionHeader :title="$t('contactsPage.pageTitle')" titleSpan="" :top="$t('contactsPage.pageTitle')" descr=""
+                data-aos="fade-left" />
         </section>
         <section class="main__location container">
             <h2 class="main__location-title">
-                Расположение офиса
+                {{ $t('contactsPage.officePosition') }}
             </h2>
             <h2 class="main__location-subtitle">
                 улица Богибустон, 147
