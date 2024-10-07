@@ -18,7 +18,9 @@
     },
     "contactsPage": {
         "pageTitle": "Kontaktlar",
-        "officePosition": "Ofis joylashuvi"
+        "officePosition": "Ofis joylashuvi",
+        "address":"Abdulla Qahhor ko‘chasi, 47-uy"
+
     },
     "aboutPage": {
         "top": "Немного о нас",

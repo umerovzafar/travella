@@ -18,7 +18,9 @@
     },
     "contactsPage": {
         "pageTitle": "Contacts",
-        "officePosition": "Office location"
+        "officePosition": "Office location",
+        "address":"Abdulla Kakhhar street, 47"
+
     },
     "aboutPage": {
         "top": "Немного о нас",

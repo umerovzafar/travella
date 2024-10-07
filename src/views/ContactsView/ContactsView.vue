@@ -8,15 +8,28 @@
     </header>
     <main class="main">
         <section class="main__contacts">
-            <SectionHeader :title="$t('contactsPage.pageTitle')" titleSpan="" :top="$t('contactsPage.pageTitle')" descr=""
-                data-aos="fade-left" />
+            <SectionHeader :title="$t('contactsPage.pageTitle')" titleSpan="" :top="$t('contactsPage.pageTitle')"
+                descr="" data-aos="fade-left" />
+            <ul class="main__contacts-list container" role="list">
+                <li><a href="tel:+998338587887">+998 33 858-7887</a></li>
+                <li>
+                    <a href="tel:+998908287008">+998 90 828-7008</a>
+
+                </li>
+                <li>
+                    <a href="tel:+998997315559">+998 99 731-5559</a>
+
+                </li>
+            </ul>
         </section>
         <section class="main__location container">
             <h2 class="main__location-title">
                 {{ $t('contactsPage.officePosition') }}
             </h2>
+
+
             <h2 class="main__location-subtitle">
-                улица Абдуллы Каххара, 47
+                {{ $t('contactsPage.address') }}
             </h2>
             <div class="main__location-map">
                 <div style="position:relative;overflow:hidden;"><a
@@ -75,6 +88,21 @@ const toggleLanguageDialog = (value: boolean): void => {
 </script>
 
 <style lang="scss" scoped>
+.main__contacts-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+    & a {
+        font-size: 24px;
+        color: var(--gray-900);
+
+        @media (max-width:576px) {
+            font-size: 18px;
+        }
+    }
+}
+
 .main {
     display: flex;
     flex-direction: column;
