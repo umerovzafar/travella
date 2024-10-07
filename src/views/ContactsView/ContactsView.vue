@@ -8,11 +8,12 @@
     </header>
     <main class="main">
         <section class="main__contacts">
-            <SectionHeader title="Контакты" titleSpan="" top="Контакты" descr="" data-aos="fade-left" />
+            <SectionHeader :title="$t('contactsPage.pageTitle')" titleSpan="" :top="$t('contactsPage.pageTitle')" descr=""
+                data-aos="fade-left" />
         </section>
         <section class="main__location container">
             <h2 class="main__location-title">
-                Расположение офиса
+                {{ $t('contactsPage.officePosition') }}
             </h2>
             <h2 class="main__location-subtitle">
                 улица Абдуллы Каххара, 47
