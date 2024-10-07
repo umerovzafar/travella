@@ -1,0 +1,14 @@
+{
+    "navLinks": {
+        "tours": "Popular tours",
+        "about": "About the Company",
+        "corporative": "For corporate clients",
+        "contacts": "Contacts"
+    },
+    "buttons": {
+        "enter": "Войти",
+        "searchTour": "Найти тур",
+        "viewTours": "Посмотреть туры",
+        "send": "Отправить"
+    }
+}

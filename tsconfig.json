@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "noEmitOnError": false,
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "allowImportingTsExtensions": true,
+    "noEmit": true // Добавлено
+  },
+  "include": [
+    "src/**/*",
+    "types/**/*"
+  ]
+}

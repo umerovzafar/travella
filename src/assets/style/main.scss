@@ -1,0 +1,26 @@
+@import url(./reset.scss);
+@import url(./fonts.scss);
+@import url(./root.css);
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1325px;
+}
+
+.wrapper {
+    padding: 8px 8px 0 8px;
+    overflow: hidden;
+    max-width: 2400px;
+    margin: 0 auto;
+    @media (max-width:576px) {
+        padding: 0px;
+    }
+}
+
+
+body {
+    background: #f1f1f1;
+
+}

@@ -1,0 +1,14 @@
+{
+    "navLinks": {
+        "tours": "Mashhur sayohatlar",
+        "about": "Kompaniya haqida",
+        "corporative": "Korporativ mijozlar uchun",
+        "contacts": "Kontaktlar"
+    },
+    "buttons": {
+        "enter": "Войти",
+        "searchTour": "Найти тур",
+        "viewTours": "Посмотреть туры",
+        "send": "Отправить"
+    }
+}
