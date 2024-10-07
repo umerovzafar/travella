@@ -10,5 +10,14 @@
         "searchTour": "Найти тур",
         "viewTours": "Посмотреть туры",
         "send": "Отправить"
+    },
+    "footer": {
+        "title": "Any questions left?",
+        "descr": "Leave your details and our managers will contact you",
+        "links":{
+            "rights":"All rights reserved",
+            "policy":"Privacy Policy",
+            "agreement":"Offer agreement"
+        }
     }
 }

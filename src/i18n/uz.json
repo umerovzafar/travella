@@ -10,5 +10,14 @@
         "searchTour": "Найти тур",
         "viewTours": "Посмотреть туры",
         "send": "Отправить"
+    },
+    "footer": {
+        "title": "Savollar qoldimi?",
+        "descr": "Ma'lumotlaringizni qoldiring va menejerlarimiz siz bilan bog'lanadi",
+        "links":{
+            "rights":"Barcha huquqlar himoyalangan",
+            "policy":"Maxfiylik siyosati",
+            "agreement":"Taklif shartnomasi"
+        }
     }
 }

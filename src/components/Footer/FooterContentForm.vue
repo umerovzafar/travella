@@ -15,7 +15,8 @@
     <button class="footer__content-form-btn" type="submit">
       <span>Отправить</span>
       <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9.75 1.25L16 7.5M16 7.5L9.75 13.75M16 7.5H1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M9.75 1.25L16 7.5M16 7.5L9.75 13.75M16 7.5H1" stroke="white" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
       </svg>
     </button>
   </form>
@@ -40,6 +41,7 @@ const formData = ref<FormData>({
 });
 
 const submitData = async () => {
+
   const submittedData = { ...formData.value };
 
   try {
