@@ -9,7 +9,7 @@
         "enter": "Kirish",
         "searchTour": "Найти тур",
         "viewTours": "Посмотреть туры",
-        "send": "Отправить"
+        "send": "Yuborish"
     },
     "heroSection": {
         "title": "Konfor va xavfsizlikda sayohat qiling",
@@ -34,5 +34,19 @@
         "infoDescr": "Travella предлагает комплексные решения для корпоративных клиентов, обеспечивая высокий уровень сервиса и индивидуальный подход к каждому проекту. ",
         "whyText1": "Почему",
         "whyText2": "мы?"
+    },
+    "footer": {
+        "title": "Savollar qoldimi?",
+        "descr": "Ma'lumotlaringizni qoldiring va menejerlarimiz siz bilan bog'lanadi",
+        "links": {
+            "rights": "Barcha huquqlar himoyalangan",
+            "policy": "Maxfiylik siyosati",
+            "agreement": "Taklif shartnomasi"
+        },
+        "form": {
+            "name": "Ismingiz",
+            "email": "Sizning pochtangiz",
+            "message": "Xabaringiz"
+        }
     }
 }

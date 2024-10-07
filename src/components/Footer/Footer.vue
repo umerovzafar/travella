@@ -7,9 +7,9 @@
           <router-link to="/">
             <img loading="lazy" src="../../assets/images/logo.svg" alt="logo" />
           </router-link>
-          <h2 class="footer__content-item-title">Оcтались вопросы?</h2>
+          <h2 class="footer__content-item-title">{{ $t('footer.title') }}</h2>
           <p class="footer__content-item-descr">
-            Оставьте свои данныеи наши менеджера свяжутся с вами
+            {{ $t('footer.descr') }}
           </p>
           <ul class="footer__content-item-list">
             <li class="footer__content-item-list-item">
@@ -48,9 +48,14 @@
             <img loading="lazy" src="../../assets/images/footer-logo.svg" alt="footer-logo" />
           </router-link>
           <ul class="footer__contacts-content-info-list" role="list">
+            <li>
+              <router-link to="" class="footer__contacts-content-info-list-link">
+                2024
+              </router-link>
+            </li>
             <li v-for="(link, i) in links" :key="i">
               <router-link :to="link.get('to')" class="footer__contacts-content-info-list-link">
-                {{ link.get("name") }}
+                {{ $t(`footer.links.${link.get('name')}`) }}
               </router-link>
             </li>
           </ul>
@@ -65,20 +70,17 @@
 import FooterContentForm from "./FooterContentForm.vue";
 import FooterUpBtn from "./FooterUpBtn.vue";
 const links: Map<string, string>[] = [
+
   new Map([
-    ["name", "2024"],
+    ["name", "rights"],
     ["to", "/"],
   ]),
   new Map([
-    ["name", "Все права защищены"],
+    ["name", "policy"],
     ["to", "/"],
   ]),
   new Map([
-    ["name", "Политика конфиденциальности"],
-    ["to", "/"],
-  ]),
-  new Map([
-    ["name", "Договор оферты"],
+    ["name", "agreement"],
     ["to", "/"],
   ]),
 ];

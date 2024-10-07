@@ -9,7 +9,7 @@
         "enter": "Войти",
         "searchTour": "Найти тур",
         "viewTours": "Посмотреть туры",
-        "send": "Отправить"
+              "send": "Send"
     },
     "heroSection": {
         "title": "Travel with Comfort and Safety",
@@ -34,5 +34,19 @@
         "infoDescr": "Travella предлагает комплексные решения для корпоративных клиентов, обеспечивая высокий уровень сервиса и индивидуальный подход к каждому проекту. ",
         "whyText1": "Почему",
         "whyText2": "мы?"
+    },
+    "footer": {
+        "title": "Any questions left?",
+        "descr": "Leave your details and our managers will contact you",
+        "links": {
+            "rights": "All rights reserved",
+            "policy": "Privacy Policy",
+            "agreement": "Offer agreement"
+        },
+        "form": {
+            "name": "Your name",
+            "email": "Your email",
+            "message": "Your message"
+        }
     }
 }
