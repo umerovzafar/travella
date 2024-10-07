@@ -126,15 +126,15 @@
 
                 </div>
                 <div class="main__detail-content-item" style="overflow: hidden;">
-                    <img v-show="hotelDetail?.hotel_gallery" :src="hotelDetail?.hotel_gallery[0].photo"
+                    <img v-show="hotelDetail?.hotel_gallery" :src="hotelDetail?.hotel_gallery[galleryActiveImage].photo"
                         :alt="hotelDetail?.hotel_gallery[0].photo" class="main__detail-content-item-preview">
 
                     <div class="main__detail-content-item-gallery">
-                        <swiper :slidesPerView="'4'" :spaceBetween="30" :freeMode="true"
-                            :modules="modules" style="margin-top: 0;">
+                        <swiper :slidesPerView="4" :spaceBetween="30" :freeMode="true" style="margin-top: 40px;">
                             <swiper-slide class="main__info-detail-gallery-item-swiper-item"
-                                v-for="photo in hotelDetail?.hotel_gallery" :key="photo.id">
-                                <img :src="photo?.photo" :alt="photo?.photo" width="98px" height="98px">
+                                v-for="(photo, index) in hotelDetail?.hotel_gallery" :key="photo.id">
+                                <img :src="photo?.photo" :alt="photo?.photo" width="98px" height="98px"
+                                    @click="setGalleryActiveImage(index)">
                             </swiper-slide>
 
                         </swiper>
@@ -153,7 +153,13 @@
                     <img :src="item.room_images[0].image" :t="item.room_images[0].image"
                         class="main__rooms-item-gallery-preview">
                     <div class="main__rooms-item-gallery-items">
-                        <img v-for="photo in item.room_images" :src="photo.image" :alt="photo.image">
+                        <swiper :slidesPerView="item.room_images.length / 1.1" :spaceBetween="30" :freeMode="true"
+                            style="margin-top: 40px;">
+                            <swiper-slide class="main__info-detail-gallery-item-swiper-item"
+                                v-for="(photo) in item.room_images" :key="photo.id">
+                                <img :src="photo?.image" :alt="photo?.image">
+                            </swiper-slide>
+                        </swiper>
                     </div>
                 </div>
                 <div class="main__rooms-item-text">
@@ -205,8 +211,6 @@
                 style="margin-top: 20px; border-radius:20px;" />
 
         </section>
-
-
         <section class="main__reviews">
             <SectionHeader title="Что о нас говорят" titleSpan="путешественники" top="Отзывы о компании" descr=""
                 data-aos="fade-left" />
@@ -224,9 +228,9 @@
 <script lang="ts" setup>
 
 import { ref, onMounted, type Ref, computed } from 'vue';
+
 import Footer from '../../components/Footer/Footer.vue';
-import Loader from '../../components/Loader/Loader.vue';
-import MapsBlock from "../../components/MapsBlock/MapsBlock.vue";
+import MapsBlock from '../../components/MapsBlock/MapsBlock.vue';
 import LanguagePicker from '../../components/LanguagePicker/LanguagePicker.vue';
 import AdaptiveMainNavBar from '../../components/MainNavBar/AdaptiveMainNavBar.vue';
 import LangBtn from '../../components/LangBtn/LangBtn.vue';
@@ -234,20 +238,28 @@ import PrimaryBtn from '../../components/PrimaryBtn/PrimaryBtn.vue';
 import CorporativeBloc from '../../components/CorporativeBloc/CorporativeBloc.vue';
 import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
 import ReviewBloc from '../../components/ReviewsBloc/ReviewBloc.vue';
+
 import { useLoginStore } from '../../stores/loginStore';
 import { useHotelStore } from '../../stores/hotelsStore';
+
 import router from '../../router/router';
+
 import { type HotelDetail } from '../../../types/hotels';
+
 import i18n from '../../i18n';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import { FreeMode } from 'swiper/modules';
-import { Navigation } from 'swiper/modules';
+
 
 const loginStore = useLoginStore();
 const hotelStore = useHotelStore();
+const galleryActiveImage = ref<number>(0);
+
+const setGalleryActiveImage = (index: number) => {
+    galleryActiveImage.value = index;
+}
 
 const showAdaptiveNav: Ref<boolean> = ref(false);
 const showLanguageDialog = ref(false);
@@ -267,10 +279,6 @@ onMounted(() => {
 
 
 const hotelDetail = computed<HotelDetail | null>(() => hotelStore.hotelDetail);
-
-
-
-
 
 
 let lang = localStorage.lang;
@@ -296,10 +304,7 @@ const links = [
     { name: 'contacts', path: '/contacts' },
 ];
 
-
 </script>
-
-
 
 
 
@@ -431,6 +436,7 @@ const links = [
             &-gallery {
                 max-width: 300px;
                 width: 100%;
+
 
                 &-preview {
                     width: 300px;
@@ -582,6 +588,7 @@ const links = [
                 }
 
                 &-preview {
+                    height: 400px;
                     border-radius: 50px;
                 }
 

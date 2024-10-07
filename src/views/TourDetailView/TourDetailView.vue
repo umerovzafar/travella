@@ -47,10 +47,6 @@ import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
 import WorldToursSwiper from '../../components/WorldToursSwiper/WorldToursSwiper.vue';
 import ReviewBloc from '../../components/ReviewsBloc/ReviewBloc.vue';
 import MainInfoDetail from './components/MainInfoDetail.vue';
-import { useEventsStore } from '@/stores/eventsStore';
-onMounted(() => {
-
-});
 
 const showAdaptiveNav: Ref<boolean> = ref(false);
 const showLanguageDialog = ref(false);

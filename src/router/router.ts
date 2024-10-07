@@ -10,6 +10,7 @@ import ToursView from "../views/ToursView/ToursView.vue";
 import CorporativeView from "../views/CorporativeView/CorporativeView.vue";
 import TourDetailView from "../views/TourDetailView/TourDetailView.vue";
 import HotelDetailView from "../views/HotelDetailView/HotelDetailView.vue";
+import HotelBookingView from "../views/HotelDetailView/HotelBookingView.vue";
 const routes: Array<RouteRecordRaw> = [
     { name: 'home', path: '/', component: HomeView },
     { name: 'articles', path: '/articles', component: ArticlesView },
@@ -21,6 +22,7 @@ const routes: Array<RouteRecordRaw> = [
     { name: 'articlesDetail', path: '/articles-detail/:slug', component: ArticlesDetailView },
     { name: 'tourdetail', path: '/tour-detail/:slug', component: TourDetailView },
     { name: 'hotel-detail', path: '/hotel-detail/:slug', component: HotelDetailView },
+    { name: 'hotel-booking', path: '/hotel-booking/:id', component: HotelBookingView },
 ];
 
 const router: Router = createRouter({

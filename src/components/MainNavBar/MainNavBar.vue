@@ -73,7 +73,7 @@
             </ul>
             <div class="nav__options">
                 <LangBtn :lang="props.lang" :toggleLanguageDialog="toggleLanguageDialog" />
-                <PrimaryBtn :reversed="false" :btnText="'Войти'"
+                <PrimaryBtn :reversed="false" :btnText="$t('buttons.enter')"
                     :btn-action="() => loginStore.toggleModalStatus(true)" />
             </div>
             <div class="nav-btn" @click="props.toggleShowAdaptiveNav(true)">
