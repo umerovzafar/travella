@@ -9,15 +9,20 @@
         "enter": "Войти",
         "searchTour": "Найти тур",
         "viewTours": "Посмотреть туры",
-        "send": "Отправить"
+        "send": "Send"
     },
     "footer": {
         "title": "Any questions left?",
         "descr": "Leave your details and our managers will contact you",
-        "links":{
-            "rights":"All rights reserved",
-            "policy":"Privacy Policy",
-            "agreement":"Offer agreement"
+        "links": {
+            "rights": "All rights reserved",
+            "policy": "Privacy Policy",
+            "agreement": "Offer agreement"
+        },
+        "form": {
+            "name": "Your name",
+            "email": "Your email",
+            "message": "Your message"
         }
     }
 }

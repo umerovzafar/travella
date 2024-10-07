@@ -9,15 +9,20 @@
         "enter": "Kirish",
         "searchTour": "Найти тур",
         "viewTours": "Посмотреть туры",
-        "send": "Отправить"
+        "send": "Yuborish"
     },
     "footer": {
         "title": "Savollar qoldimi?",
         "descr": "Ma'lumotlaringizni qoldiring va menejerlarimiz siz bilan bog'lanadi",
-        "links":{
-            "rights":"Barcha huquqlar himoyalangan",
-            "policy":"Maxfiylik siyosati",
-            "agreement":"Taklif shartnomasi"
+        "links": {
+            "rights": "Barcha huquqlar himoyalangan",
+            "policy": "Maxfiylik siyosati",
+            "agreement": "Taklif shartnomasi"
+        },
+        "form": {
+            "name": "Ismingiz",
+            "email": "Sizning pochtangiz",
+            "message": "Xabaringiz"
         }
     }
 }

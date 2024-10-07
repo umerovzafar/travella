@@ -1,19 +1,19 @@
 <template lang="html">
   <form class="footer__content-form" id="form" @submit.prevent="submitData">
     <label class="footer__content-form-label" for="name">
-      Ваше имя
-      <input type="text" name="name" id="name" placeholder="Ваше имя" v-model="formData.name" required />
+      {{ $t('footer.form.name') }}
+      <input type="text" name="name" id="name" :placeholder="$t('footer.form.name')" v-model="formData.name" required />
     </label>
     <label class="footer__content-form-label" for="email">
-      Ваша почта
+      {{ $t('footer.form.email') }}
       <input type="text" id="email" name="email" placeholder="hussain@finesse.com" v-model="formData.email" required />
     </label>
     <label class="footer__content-form-label">
-      Ваше сообщение
-      <textarea placeholder="Ваше сообщение" v-model="formData.text"></textarea>
+      {{ $t('footer.form.message') }}
+      <textarea :placeholder="$t('footer.form.message')" v-model="formData.text"></textarea>
     </label>
     <button class="footer__content-form-btn" type="submit">
-      <span>Отправить</span>
+      <span>{{ $t('buttons.send') }}</span>
       <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9.75 1.25L16 7.5M16 7.5L9.75 13.75M16 7.5H1" stroke="white" stroke-width="1.5" stroke-linecap="round"
           stroke-linejoin="round" />
