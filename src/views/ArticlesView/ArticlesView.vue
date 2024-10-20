@@ -25,90 +25,88 @@
 
 
 <script lang="ts" setup>
-import { ref, type Ref } from 'vue';
+import { ref, type Ref } from "vue";
 
-import AdaptiveMainNavBar from '../../components/MainNavBar/AdaptiveMainNavBar.vue';
-import MainNavBar from '../../components/MainNavBar/MainNavBar.vue';
-import LanguagePicker from '../../components/LanguagePicker/LanguagePicker.vue';
-import Footer from '../../components/Footer/Footer.vue';
-import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
-import ArticlesItem from '../../components/ArticlesItem/ArticlesItem.vue';
-import i18n from '../../i18n';
-import { useArticlesStore } from '../../stores/articlesStore';
-import { computed } from 'vue';
-import { onMounted } from 'vue';
+import AdaptiveMainNavBar from "../../components/MainNavBar/AdaptiveMainNavBar.vue";
+import MainNavBar from "../../components/MainNavBar/MainNavBar.vue";
+import LanguagePicker from "../../components/LanguagePicker/LanguagePicker.vue";
+import Footer from "../../components/Footer/Footer.vue";
+import SectionHeader from "../../components/SectionHeader/SectionHeader.vue";
+import ArticlesItem from "../../components/ArticlesItem/ArticlesItem.vue";
+import i18n from "../../i18n";
+import { useArticlesStore } from "../../stores/articlesStore";
+import { computed } from "vue";
+import { onMounted } from "vue";
 const articlesStore = useArticlesStore();
 const showAdaptiveNav: Ref<boolean> = ref(false);
 const showLanguageDialog = ref(false);
 const toggleShowAdaptiveNav: Function = (value: boolean): void => {
-    showAdaptiveNav.value = value;
-    if (showAdaptiveNav.value) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'scroll';
-    }
-}
+  showAdaptiveNav.value = value;
+  if (showAdaptiveNav.value) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
+  }
+};
 
 const articles = computed(() => {
-    return articlesStore.articles;
+  return articlesStore.articles;
 });
 
 onMounted(() => {
-    articlesStore.getArticles();
-})
+  articlesStore.getArticles();
+});
 
 let lang = localStorage.lang;
 const setLang = (langData: string) => {
-    localStorage.lang = langData;
-    lang = langData;
-    i18n.global.locale = lang;
+  localStorage.lang = langData;
+  lang = langData;
+  i18n.global.locale = lang;
 
-    toggleLanguageDialog(false);
-}
+  toggleLanguageDialog(false);
+};
 const toggleLanguageDialog = (value: boolean): void => {
-    showLanguageDialog.value = value;
-    if (showLanguageDialog.value) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'scroll';
-    }
-}
-
-
+  showLanguageDialog.value = value;
+  if (showLanguageDialog.value) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .main {
-    display: flex;
-    flex-direction: column;
-    margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
 
+  &__search {
+    &-content {
+      & input {
+        width: 100%;
+        padding: 10px 14px;
+        box-shadow: 0 0 0 1px rgba(103, 110, 118, 0.16),
+          0 2px 5px 0 rgba(103, 110, 118, 0.08);
+        background: var(--white);
+        border-radius: 50px;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--gray-400);
 
-    &__search {
-        &-content {
-            & input {
-                width: 100%;
-                padding: 10px 14px;
-                box-shadow: 0 0 0 1px rgba(103, 110, 118, 0.16), 0 2px 5px 0 rgba(103, 110, 118, 0.08);
-                background: var(--white);
-                border-radius: 50px;
-                font-weight: 400;
-                font-size: 16px;
-                color: var(--gray-400);
-
-                &::placeholder {
-                    color: var(--gray-400);
-                }
-            }
+        &::placeholder {
+          color: var(--gray-400);
         }
+      }
     }
+  }
 
-    &__articles {
-        margin-top: 40px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        grid-auto-rows: 306px;
-        gap: 24px;
-    }
+  &__articles {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 306px;
+    gap: 24px;
+  }
 }
 </style>

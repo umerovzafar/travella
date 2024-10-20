@@ -19,23 +19,30 @@
     "contactsPage": {
         "pageTitle": "Kontaktlar",
         "officePosition": "Ofis joylashuvi",
-        "address":"Abdulla Qahhor ko‘chasi, 47-uy"
+        "address": "Abdulla Qahhor ko‘chasi, 47-uy"
 
     },
     "aboutPage": {
-        "top": "Немного о нас",
-        "descr": "Мы являемся ведущей компанией в сфере организации туров и путешествий, предлагая нашим клиентам незабываемые впечатления и комфортные условия для отдыха.",
-        "slogan": "ваши мечты-наши маршруты",
-        "factsDescr": "Мы стремимся подарить вам идеальные путешествия, которые оставят самые яркие и приятные воспоминания. ",
-        "locationsText1": "С момента открытия агентство начало активно привлекать клиентов, предлагая им персонализированные туры, высокий уровень сервиса и индивидуальный подход.",
-        "locationsText2": "Благодаря качественной работе и постоянному совершенствованию услуг, агентство быстро завоевало доверие и признание на рынке.",
-        "locationsText3": "За 10 лет работы, мы обзавелись партнёрами в разных странах",
-        "infoTitle": "Ваш надежный партнер",
-        "infoTitleSpan": "в организации деловых поездок",
-        "infoTop": "Информация для корпоративных клиентов",
-        "infoDescr": "Travella предлагает комплексные решения для корпоративных клиентов, обеспечивая высокий уровень сервиса и индивидуальный подход к каждому проекту. ",
-        "whyText1": "Почему",
-        "whyText2": "мы?"
+        "top": "Biz haqimizda bir oz",
+        "descr": "Biz ekskursiyalar va sayohatlar tashkil etish sohasida yetakchi kompaniyamiz, mijozlarimizga unutilmas tajribalar va dam olishlari uchun qulay shart-sharoitlarni taklif etamiz.",
+        "slogan": "Sizning orzularingiz bizning marshrutlarimizdir",
+        "factsDescr": "Biz sizga eng yorqin va yoqimli xotiralarni qoldiradigan ideal sayohatlarni taqdim etishga intilamiz. ",
+        "locationsText1": "Ochilgan kundan boshlab agentlik mijozlarni faol jalb qila boshladi, ularga shaxsiy turlar, yuqori darajadagi xizmat va individual yondashuvni taklif etadi.",
+        "locationsText2": "Yuqori sifatli ish va xizmatlarni doimiy ravishda takomillashtirish tufayli agentlik tezda bozorda ishonch va e'tirofga sazovor bo'ldi.",
+        "locationsText3": "10 yillik ishimiz davomida biz turli mamlakatlarda hamkorlar oldik",
+        "infoTitle": "Sizning ishonchli hamkoringiz",
+        "infoTitleSpan": "ish safarlarini tashkil etishda",
+        "infoTop": "Korporativ mijozlar uchun ma'lumot",
+        "infoDescr": "Travella korporativ mijozlar uchun yuqori darajadagi xizmat ko‘rsatish va har bir loyihaga individual yondashuvni ta’minlovchi kompleks yechimlarni taklif etadi. ",
+        "whyText1": "Nima uchun",
+        "whyText2": "Biz?", 
+        "factsTitle": "ba'zi ",
+        "factsTitleSpan": "faktlar",
+        "items": {
+            "first": "The agency has been open since 2014.",
+            "second": "Clients satisfied with our cooperation",
+            "third": "More than 20 receptions for sending from Uzbekistan"
+        }
     },
     "footer": {
         "title": "Savollar qoldimi?",
@@ -50,5 +57,33 @@
             "email": "Sizning pochtangiz",
             "message": "Xabaringiz"
         }
+    },
+    "corporateClientsPage": {
+        "heroSubtitle": "Korporativ mijozlar",
+        "heroTitle": "Dunyo bo'ylab korporativ sayohatlar",
+        "heroTitleTop": "Dunyo bo'ylab ",
+        "heroTitleSpan": "korporativ sayohatlar",
+        "heroText": "Turingizning har bir jihati diqqat bilan ko'rib chiqilganligini bilib, qulaylik va ishonch bilan sayohat qiling",
+        "sectionOneText1": "Jamoangizni birlashtirib, chinakam g'ayrioddiy jamoa qurish tadbirini tashkil qilmoqchimisiz? ",
+        "sectionOneText2": "Dunyoning istalgan nuqtasiga jamoaviy sayohat yoki ajoyib go‘zal va tarixiy O‘zbekiston bo‘ylab tematik sayohatni sinab ko‘ring",
+        "sectionTitle1": "Biz nafaqat marshrutlarni, balki jamoani ham kuchaytirmoqdamiz",
+        "ourClientsSectionSubtitle": "Biz kim bilan hamkorlik qilamiz?",
+        "ourClientsSectionTitle": "bizning mijozlarimiz",
+        "ourClientsSectionTitleSpan": "mijozlarimiz",
+        "popularToursSectionSubtitle": "Dunyo",
+        "popularToursSectionTitle": "mashhur sayohatlar",
+        "popularToursSectionTitleSpan": "Dunyo bo'ylab",
+        "popularToursSectionText": "Turingizning har bir jihati diqqat bilan ko'rib chiqilganligini bilib, qulaylik va ishonch bilan sayohat qiling"
+    },
+    "companyComments": {
+        "companyCommentsSubtitle": "Kompaniya haqida sharhlar",
+        "companyCommentsTitle": "Biz haqimizda nima deyishadi",
+        "companyCommentsTitleSpan": "sayohatchilar"
+    },
+    "commonText": {
+        "contentSectionTitle": "O'zbekistonni kashf et",
+        "contentSectionText": "O‘zbekiston bo‘ylab qiziqarli sayohatlarimiz bilan sharqona ertak muhitiga sho‘ng‘ib keting! Tarix va madaniyatga boy bu qadimiy hudud unutilmas tajribalar va noyob kashfiyotlar va'da qiladi.",
+        "toursBtn": "Ekskursiyalarni ko'rish"
     }
+
 }

@@ -226,465 +226,451 @@
 
 
 <script lang="ts" setup>
+import { ref, onMounted, type Ref, computed } from "vue";
 
-import { ref, onMounted, type Ref, computed } from 'vue';
+import Footer from "../../components/Footer/Footer.vue";
+import MapsBlock from "../../components/MapsBlock/MapsBlock.vue";
+import LanguagePicker from "../../components/LanguagePicker/LanguagePicker.vue";
+import AdaptiveMainNavBar from "../../components/MainNavBar/AdaptiveMainNavBar.vue";
+import LangBtn from "../../components/LangBtn/LangBtn.vue";
+import PrimaryBtn from "../../components/PrimaryBtn/PrimaryBtn.vue";
+import CorporativeBloc from "../../components/CorporativeBloc/CorporativeBloc.vue";
+import SectionHeader from "../../components/SectionHeader/SectionHeader.vue";
+import ReviewBloc from "../../components/ReviewsBloc/ReviewBloc.vue";
 
-import Footer from '../../components/Footer/Footer.vue';
-import MapsBlock from '../../components/MapsBlock/MapsBlock.vue';
-import LanguagePicker from '../../components/LanguagePicker/LanguagePicker.vue';
-import AdaptiveMainNavBar from '../../components/MainNavBar/AdaptiveMainNavBar.vue';
-import LangBtn from '../../components/LangBtn/LangBtn.vue';
-import PrimaryBtn from '../../components/PrimaryBtn/PrimaryBtn.vue';
-import CorporativeBloc from '../../components/CorporativeBloc/CorporativeBloc.vue';
-import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
-import ReviewBloc from '../../components/ReviewsBloc/ReviewBloc.vue';
+import { useLoginStore } from "../../stores/loginStore";
+import { useHotelStore } from "../../stores/hotelsStore";
 
-import { useLoginStore } from '../../stores/loginStore';
-import { useHotelStore } from '../../stores/hotelsStore';
+import router from "../../router/router";
 
-import router from '../../router/router';
+import { type HotelDetail } from "../../../types/hotels";
 
-import { type HotelDetail } from '../../../types/hotels';
+import i18n from "../../i18n";
 
-import i18n from '../../i18n';
-
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/free-mode";
 
 const loginStore = useLoginStore();
 const hotelStore = useHotelStore();
 const galleryActiveImage = ref<number>(0);
 
 const setGalleryActiveImage = (index: number) => {
-    galleryActiveImage.value = index;
-}
+  galleryActiveImage.value = index;
+};
 
 const showAdaptiveNav: Ref<boolean> = ref(false);
 const showLanguageDialog = ref(false);
 const toggleShowAdaptiveNav: Function = (value: boolean): void => {
-    showAdaptiveNav.value = value;
-    if (showAdaptiveNav.value) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'scroll';
-    }
-}
+  showAdaptiveNav.value = value;
+  if (showAdaptiveNav.value) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
+  }
+};
 
 onMounted(() => {
-    const slug = router.currentRoute.value.params.slug as string;
-    hotelStore.fetchHotelDetail(slug);
+  const slug = router.currentRoute.value.params.slug as string;
+  hotelStore.fetchHotelDetail(slug);
 });
-
 
 const hotelDetail = computed<HotelDetail | null>(() => hotelStore.hotelDetail);
 
-
 let lang = localStorage.lang;
 const setLang = (langData: string) => {
-    localStorage.lang = langData;
-    lang = langData;
-    i18n.global.locale = lang;
-    toggleLanguageDialog(false);
-}
+  localStorage.lang = langData;
+  lang = langData;
+  i18n.global.locale = lang;
+  toggleLanguageDialog(false);
+};
 const toggleLanguageDialog = (value: boolean): void => {
-    showLanguageDialog.value = value;
-    if (showLanguageDialog.value) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'scroll';
-    }
-}
+  showLanguageDialog.value = value;
+  if (showLanguageDialog.value) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
+  }
+};
 
 const links = [
-    { name: 'tours', path: '/tours' },
-    { name: 'about', path: '/about' },
-    { name: 'corporative', path: '/corporative' },
-    { name: 'contacts', path: '/contacts' },
+  { name: "tours", path: "/tours" },
+  { name: "about", path: "/about" },
+  { name: "corporative", path: "/corporative" },
+  { name: "contacts", path: "/contacts" },
 ];
-
 </script>
 
 
 
 <style lang="scss" scoped>
 .tours__header {
-    z-index: 10;
+  z-index: 10;
 
-    &-nav {
-        padding: 40px 0;
-        background: var(--primary-500);
-        margin: -8px;
-        border-radius: 0 0 40px 40px;
+  &-nav {
+    padding: 40px 0;
+    background: var(--primary-500);
+    margin: -8px;
+    border-radius: 0 0 40px 40px;
 
-        &-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        &-list {
-            display: flex;
-            gap: 28px;
-
-            &-link {
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 125%;
-                color: var(--white);
-                cursor: pointer;
-                transition: .5s linear;
-
-                &.page {
-                    color: var(--gray-900);
-                }
-
-                @media (max-width:1200px) {
-                    font-size: 16px;
-                }
-            }
-
-            @media (max-width:992px) {
-                display: none;
-            }
-        }
-
-        &-options {
-            display: flex;
-            gap: 16px;
-
-            @media (max-width:992px) {
-                display: none;
-            }
-        }
-
-        &-btn {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--primary-500);
-            justify-content: center;
-            align-items: center;
-            visibility: hidden;
-            display: none;
-            opacity: 0;
-
-            @media (max-width:992px) {
-                display: flex;
-                visibility: visible;
-                opacity: 1;
-            }
-        }
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    &-list {
+      display: flex;
+      gap: 28px;
+
+      &-link {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 125%;
+        color: var(--white);
+        cursor: pointer;
+        transition: 0.5s linear;
+
+        &.page {
+          color: var(--gray-900);
+        }
+
+        @media (max-width: 1200px) {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    &-options {
+      display: flex;
+      gap: 16px;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    &-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary-500);
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      display: none;
+      opacity: 0;
+
+      @media (max-width: 992px) {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .loader__main {
-    height: 100vh;
-    background: var(--white);
-    overflow: hidden;
-    border-radius: 50px;
-    margin: 40px 0;
+  height: 100vh;
+  background: var(--white);
+  overflow: hidden;
+  border-radius: 50px;
+  margin: 40px 0;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
 
-    & img {
-        user-select: none;
+  & img {
+    user-select: none;
+  }
+
+  &__location {
+    margin-top: 40px;
+
+    & span {
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--gray-900);
     }
 
-    &__location {
-        margin-top: 40px;
+    &-title {
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--gray-900);
+    }
+  }
 
-        & span {
-            margin-top: 10px;
+  &__rooms {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-title {
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--gray-900);
+    }
+
+    &-item {
+      display: flex;
+      gap: 20px;
+      padding: 16px;
+      background: var(--white);
+      border-radius: 40px;
+
+      &-gallery {
+        max-width: 300px;
+        width: 100%;
+
+        &-preview {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 40px;
+        }
+
+        &-items {
+          display: flex;
+          margin-top: 12px;
+          gap: 12px;
+          overflow: hidden;
+
+          & img {
+            width: 98px;
+            height: 98px;
+            border-radius: 20px;
+          }
+        }
+      }
+
+      &-text {
+        width: 100%;
+
+        &-title {
+          font-weight: 700;
+          font-size: 28px;
+          color: var(--gray-900);
+        }
+
+        &-inclusive {
+          margin-top: 10px;
+        }
+
+        & p {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-top: 12px;
+
+          & span {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--gray-500);
+          }
+        }
+
+        &-descr {
+          font-weight: 400;
+          font-size: 16px;
+          color: var(--gray-500);
+          margin-top: 10px;
+        }
+
+        &-price {
+          padding: 8px 16px;
+          background: var(--gray-100);
+          border-radius: 20px;
+          margin-top: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          & p {
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--gray-900);
+            display: flex;
+            align-items: self-start;
+            flex-direction: column;
+
+            & span {
+              font-weight: 600;
+              font-size: 16px;
+              color: var(--gray-500);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__detail {
+    &-header {
+      &-options {
+        display: flex;
+        gap: 12px;
+
+        &-item {
+          padding: 4px 10px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: 50px;
+          background: #cbedfb;
+
+          & span {
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            color: var(--gray-900);
+          }
+
+          &:nth-child(2) {
+            background: var(--warning-200);
+
+            & span {
+              color: var(--warning-700);
+            }
+          }
+
+          &:nth-child(3) {
+            background: #cbd8fb;
+
+            & span {
+              color: #281ac8;
+            }
+          }
+        }
+      }
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 20px;
+      gap: 40px;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-title {
+          font-weight: 700;
+          font-size: 36px;
+          color: var(--gray-900);
+        }
+
+        &:nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        &-preview {
+          height: 400px;
+          border-radius: 50px;
+        }
+
+        &-gallery {
+          display: flex;
+          overflow: hidden;
+          gap: 12px;
+
+          & img {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            object-fit: cover;
+          }
+        }
+
+        &-location {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-weight: 600;
+          font-size: 16px;
+          color: var(--gray-900);
+          margin: 20px 0;
+        }
+
+        &-overview {
+          display: flex;
+          flex-direction: column;
+          font-weight: 600;
+          font-size: 16px;
+          color: var(--gray-500);
+          max-width: 90%;
+          margin-bottom: 10px;
+
+          & span {
             font-weight: 700;
             font-size: 20px;
             color: var(--gray-900);
+            margin-bottom: 20px;
+          }
         }
 
-        &-title {
-            font-weight: 700;
-            font-size: 36px;
-            color: var(--gray-900);
+        &-options {
+          margin-bottom: 20px;
+
+          & span {
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            color: var(--primary-900);
+            padding: 4px 10px;
+            border-radius: 10px;
+            background: var(--primary-300);
+          }
         }
+
+        &-price {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: var(--white);
+          padding: 16px;
+          border-radius: 20px;
+
+          &-booking {
+            height: 69px;
+          }
+
+          &-block {
+            & span {
+              font-weight: 600;
+              font-size: 16px;
+              color: var(--gray-500);
+            }
+
+            & p {
+              font-weight: 800;
+              font-size: 48px;
+              text-transform: uppercase;
+              color: var(--gray-900);
+              margin-top: 8px;
+
+              & span {
+                font-weight: 700;
+                font-size: 20px;
+                color: var(--gray-900);
+              }
+            }
+          }
+        }
+      }
     }
-
-    &__rooms {
-        padding-top: 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        &-title {
-            font-weight: 700;
-            font-size: 36px;
-            color: var(--gray-900);
-        }
-
-        &-item {
-            display: flex;
-            gap: 20px;
-            padding: 16px;
-            background: var(--white);
-            border-radius: 40px;
-
-
-            &-gallery {
-                max-width: 300px;
-                width: 100%;
-
-
-                &-preview {
-                    width: 300px;
-                    height: 200px;
-                    object-fit: cover;
-                    border-radius: 40px;
-                }
-
-                &-items {
-                    display: flex;
-                    margin-top: 12px;
-                    gap: 12px;
-                    overflow: hidden;
-
-                    & img {
-                        width: 98px;
-                        height: 98px;
-                        border-radius: 20px;
-
-                    }
-                }
-            }
-
-            &-text {
-                width: 100%;
-
-                &-title {
-                    font-weight: 700;
-                    font-size: 28px;
-                    color: var(--gray-900);
-                }
-
-                &-inclusive {
-                    margin-top: 10px;
-                }
-
-                & p {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    margin-top: 12px;
-
-                    & span {
-                        font-weight: 700;
-                        font-size: 16px;
-                        color: var(--gray-500);
-                    }
-                }
-
-                &-descr {
-                    font-weight: 400;
-                    font-size: 16px;
-                    color: var(--gray-500);
-                    margin-top: 10px;
-                }
-
-                &-price {
-                    padding: 8px 16px;
-                    background: var(--gray-100);
-                    border-radius: 20px;
-                    margin-top: 12px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                    & p {
-                        font-weight: 700;
-                        font-size: 36px;
-                        color: var(--gray-900);
-                        display: flex;
-                        align-items: self-start;
-                        flex-direction: column;
-
-                        & span {
-                            font-weight: 600;
-                            font-size: 16px;
-                            color: var(--gray-500);
-                        }
-                    }
-
-                }
-            }
-
-        }
-    }
-
-    &__detail {
-        &-header {
-            &-options {
-                display: flex;
-                gap: 12px;
-
-                &-item {
-                    padding: 4px 10px;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    border-radius: 50px;
-                    background: #cbedfb;
-
-                    & span {
-                        font-weight: 600;
-                        font-size: 16px;
-                        text-align: center;
-                        color: var(--gray-900);
-                    }
-
-                    &:nth-child(2) {
-                        background: var(--warning-200);
-
-                        & span {
-                            color: var(--warning-700);
-                        }
-                    }
-
-                    &:nth-child(3) {
-                        background: #cbd8fb;
-
-                        & span {
-                            color: #281ac8;
-                        }
-                    }
-                }
-            }
-
-        }
-
-        &-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            margin-top: 20px;
-            gap: 40px;
-
-            &-item {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                &-title {
-                    font-weight: 700;
-                    font-size: 36px;
-                    color: var(--gray-900);
-                }
-
-                &:nth-child(2) {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-
-                &-preview {
-                    height: 400px;
-                    border-radius: 50px;
-                }
-
-                &-gallery {
-                    display: flex;
-                    overflow: hidden;
-                    gap: 12px;
-
-                    & img {
-                        width: 120px;
-                        height: 120px;
-                        border-radius: 20px;
-                        object-fit: cover;
-                    }
-                }
-
-
-                &-location {
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    font-weight: 600;
-                    font-size: 16px;
-                    color: var(--gray-900);
-                    margin: 20px 0;
-                }
-
-                &-overview {
-                    display: flex;
-                    flex-direction: column;
-                    font-weight: 600;
-                    font-size: 16px;
-                    color: var(--gray-500);
-                    max-width: 90%;
-                    margin-bottom: 10px;
-
-                    & span {
-                        font-weight: 700;
-                        font-size: 20px;
-                        color: var(--gray-900);
-                        margin-bottom: 20px;
-                    }
-                }
-
-                &-options {
-                    margin-bottom: 20px;
-
-                    & span {
-                        font-weight: 600;
-                        font-size: 16px;
-                        text-align: center;
-                        color: var(--primary-900);
-                        padding: 4px 10px;
-                        border-radius: 10px;
-                        background: var(--primary-300);
-                    }
-                }
-
-                &-price {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    background: var(--white);
-                    padding: 16px;
-                    border-radius: 20px;
-
-                    &-booking {
-                        height: 69px;
-                    }
-
-                    &-block {
-                        & span {
-                            font-weight: 600;
-                            font-size: 16px;
-                            color: var(--gray-500);
-                        }
-
-                        & p {
-                            font-weight: 800;
-                            font-size: 48px;
-                            text-transform: uppercase;
-                            color: var(--gray-900);
-                            margin-top: 8px;
-
-                            & span {
-                                font-weight: 700;
-                                font-size: 20px;
-                                color: var(--gray-900);
-                            }
-                        }
-                    }
-                }
-            }
-
-
-        }
-    }
+  }
 }
 </style>

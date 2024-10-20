@@ -9,7 +9,7 @@
         "enter": "Войти",
         "searchTour": "Найти тур",
         "viewTours": "Посмотреть туры",
-              "send": "Send"
+        "send": "Send"
     },
     "heroSection": {
         "title": "Travel with Comfort and Safety",
@@ -19,23 +19,30 @@
     "contactsPage": {
         "pageTitle": "Contacts",
         "officePosition": "Office location",
-        "address":"Abdulla Kakhhar street, 47"
+        "address": "Abdulla Kakhhar street, 47"
 
     },
     "aboutPage": {
-        "top": "Немного о нас",
-        "descr": "Мы являемся ведущей компанией в сфере организации туров и путешествий, предлагая нашим клиентам незабываемые впечатления и комфортные условия для отдыха.",
-        "slogan": "ваши мечты-наши маршруты",
-        "factsDescr": "Мы стремимся подарить вам идеальные путешествия, которые оставят самые яркие и приятные воспоминания. ",
-        "locationsText1": "С момента открытия агентство начало активно привлекать клиентов, предлагая им персонализированные туры, высокий уровень сервиса и индивидуальный подход.",
-        "locationsText2": "Благодаря качественной работе и постоянному совершенствованию услуг, агентство быстро завоевало доверие и признание на рынке.",
-        "locationsText3": "За 10 лет работы, мы обзавелись партнёрами в разных странах",
-        "infoTitle": "Ваш надежный партнер",
-        "infoTitleSpan": "в организации деловых поездок",
-        "infoTop": "Информация для корпоративных клиентов",
-        "infoDescr": "Travella предлагает комплексные решения для корпоративных клиентов, обеспечивая высокий уровень сервиса и индивидуальный подход к каждому проекту. ",
-        "whyText1": "Почему",
-        "whyText2": "мы?"
+        "top": "A little bit about us",
+        "descr": "We are a leading company in the field of organizing tours and travels, offering our clients unforgettable experiences and comfortable conditions for rest.",
+        "slogan": "your dreams - our routes",
+        "factsDescr": "We strive to give you ideal travel experiences that will leave you with the most vivid and pleasant memories. ",
+        "locationsText1": "Since its opening, the agency has begun to actively attract clients, offering them personalized tours, a high level of service and an individual approach.",
+        "locationsText2": "Thanks to high-quality work and constant improvement of services, the agency quickly gained trust and recognition in the market.",
+        "locationsText3": "Over 10 years of work, we have acquired partners in different countries.",
+        "infoTitle": "Your reliable partner",
+        "infoTitleSpan": "in organizing business trips",
+        "infoTop": "Information for corporate clients",
+        "infoDescr": "Travella offers comprehensive solutions for corporate clients, providing a high level of service and an individual approach to each project. ",
+        "whyText1": "Why",
+        "whyText2": "We?",
+        "factsTitle": "some ",
+        "factsTitleSpan": "facts",
+        "items": {
+            "first": "The agency has been open since 2014.",
+            "second": "Clients satisfied with our cooperation",
+            "third": "More than 20 receptions for sending from Uzbekistan"
+        }
     },
     "footer": {
         "title": "Any questions left?",
@@ -50,5 +57,32 @@
             "email": "Your email",
             "message": "Your message"
         }
+    },
+    "corporateClientsPage": {
+        "heroSubtitle": "Corporate clients",
+        "heroTitle": "Corporate tours around the world",
+        "heroTitleTop": "Corporate tours",
+        "heroTitleSpan": "around the world",
+        "heroText": "Travel with comfort and confidence knowing that every aspect of your tour has been carefully thought out.",
+        "sectionOneText1": "Want to unite your team and organize a truly unusual team building? ",
+        "sectionOneText2": "Try a team trip to any point in the world or a themed trip to the incredibly beautiful and historical Uzbekistan",
+        "sectionTitle1": "We build not only routes but also strengthen the teams",
+        "ourClientsSectionSubtitle": "Who we cooperate with",
+        "ourClientsSectionTitle": "our",
+        "ourClientsSectionTitleSpan": "clients",
+        "popularToursSectionSubtitle": "World",
+        "popularToursSectionTitle": "Popular tours",
+        "popularToursSectionTitleSpan": "around the world",
+        "popularToursSectionText": "Travel with comfort and confidence knowing that every aspect of your tour has been carefully thought out."
+    },
+    "companyComments": {
+        "companyCommentsSubtitle": "Reviews about the company",
+        "companyCommentsTitle": "What say about us",
+        "companyCommentsTitleSpan": "travelers"
+    },
+    "commonText": {
+        "contentSectionTitle": "Discover Uzbekistan",
+        "contentSectionText": "Immerse yourself in the atmosphere of an oriental fairy tale with our fascinating tours of Uzbekistan! This ancient land, rich in history and culture, promises unforgettable impressions and unique discoveries.",
+        "toursBtn": "View tours"
     }
 }
